@@ -10,3 +10,18 @@ img {
     width: 100%;
     /* height: 100px; */
 }
+
+.ash {
+    border: 2px solid gainsboro;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #fff;
+    color: black;
+}
+.green {
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: greenyellow;
+    color: green
+}
