@@ -1,15 +1,23 @@
-import { use } from "react"
+import { use } from "react";
+import Country from "../country/country";
 
-
-const Countries = ({messege}) => {
-    const countriesData = use(messege)
-    const countries = countriesData.countries
-    console.log(countries);
+const Countries = ({ countriesPromise }) => {
+  const countriesData = use(countriesPromise);
+  const countries = countriesData.countries;
   return (
-    <div>
-        
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 400px)",
+        gap: "10px",
+        marginTop: "20px",
+      }}
+    >
+      {countries.map((country) => (
+        <Country country={country} key={country.ccn3.ccn3}/>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Countries
+export default Countries;
