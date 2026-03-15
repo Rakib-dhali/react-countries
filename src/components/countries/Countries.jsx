@@ -4,18 +4,30 @@ import './Countries.css'
 
 const Countries = ({ countriesPromise }) => {
   const [visitedCountries, setVisitedCountries] = useState([])
+  const [visitedFlag, setVisitedFlag] =  useState([]);
+
 
   const handleVisitedCountries = (country)=>{
     const newVisitedCountry = [...visitedCountries, country]    
     setVisitedCountries(newVisitedCountry)
   }
+
+const handleVisitedFlag = (flag) => {
+
+  const newVisitedFlags = [...visitedFlag, flag]
+  setVisitedFlag(newVisitedFlags)
+}
+
   const countriesData = use(countriesPromise);
   const countries = countriesData.countries;
   return (<>
   <h2>visited country {visitedCountries.length}</h2>
+  <div >
+    {visitedFlag.map(flag => <img src={flag}/>)}
+  </div>
     <div className="countries">
       {countries.map((country) => (
-        <Country country={country} key={country.ccn3.ccn3} handleVisitedCountries={handleVisitedCountries}/>
+        <Country country={country} key={country.ccn3.ccn3} handleVisitedCountries={handleVisitedCountries} handleVisitedFlag={handleVisitedFlag}/>
       ))}
     </div></>
   );
